@@ -13,62 +13,86 @@ body {
   background-color: #799bbd;
 }
 
+/* grid index*/
 .layout {
     display: grid; 
     grid-template-columns: 1fr 1fr; 
-    grid-template-rows: 0.2fr 0.2fr 2fr 1fr 0.2fr; 
+    grid-template-rows: 0.2fr 2fr 1fr 0.2fr; 
     gap: 0px 0px; 
     grid-template-areas: 
-      "logo logo"
-      "navegador navegador"
+      "nav nav"
       "galeria galeria"
       "resumen resumen"
       "footer footer"; 
   }
 
-  .nav-log { 
-    grid-area: logo; 
-    display: flex;
-    justify-content: center;
-    background-color: #000;
-  }
-
-  .navegador { 
-    grid-area: navegador; 
-    background-color: black;
-    text-align: center;
-    color: #fff;
-    display: flex;
-    justify-content: space-evenly;
-    text-decoration: none;
-  }
-
-  .galeria { 
-    grid-area: galeria;
-     
+  nav {
+    grid-area: nav;
   }
   
-  .container-div {
+  .galeria { 
+    grid-area: galeria;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  
+
+  footer {
+    grid-area: footer;
+    text-align: center;
+    color: white;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 93px;
+   }
+  
+/* grid clientes*/
+.layout-clientes {
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 0.2fr 2fr 0.2fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "nav nav"
+    "galeria galeria"
+    "footer footer"; 
+}
+  
+/* grid servicios y legales*/
+.layout-servicios {
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 0.2fr 2fr 0.2fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "nav nav"
+    "resumen resumen"
+    "footer footer"; 
+}
+
+.container-div {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   grid-area: resumen;
 }
 
-  .footer {
-    grid-area: footer;
-    text-align: center;
-    color: white;
-    background-color: black;
-   }
-  
+.contacto-formulario{
+display: block;
+grid-area: resumen;
+justify-self: center;
+}
 
 h1 {
   text-align: right;
   color: white;
   background-color: black;
   display: inline;
-  /* margin-right: 100px; */
 }
 
 .whatsapp {
@@ -102,22 +126,29 @@ a:hover {
   color: black;
 }
 
-
-
-
-.a-logo {
-   display: flex;
-}
-
 .imagenbombero {
   margin-top: 10px;
   margin-left: 5px;
-  width: 10%;
-  height: 10%;
-  display: inline-block;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
+.nav-log {  
+  display: flex;
+  justify-content: center;
+  background-color: #000;
+}
 
+.navegador { 
+  background-color: black;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  justify-content: space-evenly;
+  text-decoration: none;
+}
 nav a {
   text-decoration: none;
   color: inherit;
@@ -137,7 +168,6 @@ nav li:hover {
   background-color: #799bbd;
   color: white;
 }
-
 
 
 .resumen {
@@ -163,67 +193,110 @@ div h2 {
   grid-area:titulo;
 
 }
+@media screen and (max-width: 1200px) {
+  .whatsapp {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    bottom: 35px;
+    right: 2px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 27px;
+    z-index: 100;
+  }
+  
+  .whatsapp-icon {
+    margin-top: none;
+    transform: translateY(-3px);
+  }
+}
+@media screen and (max-width: 768px) {
 
-.imagen1 {
-  grid-area: imagen1;
-  max-width: 323px;
-  max-height: 323px; 
-  height: auto;
-  width: auto;
-}
-
-.imagen2{
-  grid-area: imagen2;
-  max-width: 323px;
-  max-height: 323px; 
-  height: auto;
-  width: auto;
-}
-.imagen3 {
-  grid-area: imagen3;
-  max-width: 323px;
-  max-height: 323px;
-  height: auto;
-  width: auto;
-}
-.imagen4 {
-  grid-area: imagen4;
-  max-width: 323px;
-  max-height: 323px; 
-  height: auto;
-  width: auto;
-}
-
-.imagen5{
-  grid-area: imagen5;
-  max-width: 323px;
-  max-height: 323px; 
-  height: auto;
-  width: auto;
-}
-
-.imagen6 {
-  grid-area: imagen6;
-  max-width: 323px;
-  max-height: 323px; 
-  height: auto;
-  width: auto; 
-}
-.clientesimagenes {
+  .layout {
     display: grid; 
-  grid-template-columns: 323px 323px 323px; 
-  grid-template-rows: 0.2fr 1fr 1fr; 
-  gap: 1px 10px; 
-  grid-template-areas: 
-  "imagen1 titulo titulo"
-  "imagen1 imagen2 imagen4"
-  "imagen3 imagen6 imagen5"; 
-}
+    grid-template-columns: 1fr; 
+    grid-template-rows: 0.2fr 0.5fr 0.5fr 0.2fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "nav nav"
+      "galeria galeria"
+      "resumen resumen"
+      "footer footer"; 
+  }
 
-@media screen and (max-width: 480px) {
-  .navegador{
-    flex-direction: column
+  nav li {
+    width: auto;
+  padding: 5px 10px;
+  margin: 0px 30px;
+  border-radius: 5px;
+  }
+
+  .navegador { 
+    background-color: black;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+    align-items: center;
+  }
+  
+  .galeria { 
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    justify-content: space-evenly;
+  }
+
+  .imagenbombero {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin: 10px;
+  }
+  .whatsapp {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    bottom: 35px;
+    right: 2px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 27px;
+    z-index: 100;
+  }
+  
+  .whatsapp-icon {
+    margin-top: none;
+    transform: translateY(-3px);
   }
 }
 
+@media screen and (max-width: 480px) {
 
+  .imagenbombero {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin: 10px;
+    transition: 2s
+  }
+
+  .galeria :hover {
+    width: 280px;
+    height: 300px;
+    object-fit: cover;
+    margin: 10px;
+  }
+
+}
+
+.footer-clientes {
+  margin-top: 20px;
+}
