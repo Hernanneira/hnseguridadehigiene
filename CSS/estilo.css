@@ -37,9 +37,8 @@ body {
     justify-content: space-between;
     margin-bottom: 10px;
   }
-  
-  
 
+  
   footer {
     grid-area: footer;
     text-align: center;
@@ -133,6 +132,12 @@ a:hover {
   height: 300px;
   object-fit: cover;
   border-radius: 5px;
+  filter: grayscale(100%);
+  transition: 2s;
+}
+
+.imagenbombero:hover {
+  filter: none;
 }
 
 .nav-log {  
@@ -299,4 +304,8 @@ div h2 {
 
 .footer-clientes {
   margin-top: 20px;
+}
+
+.animate__animated.animate__fadeInRight {
+  --animate-duration: 2s;
 }
