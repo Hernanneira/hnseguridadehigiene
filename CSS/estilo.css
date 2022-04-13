@@ -6,14 +6,16 @@
 html {
   font-size: 62, 5%;
 }
+
 body {
-  width: 90%;
+  /*width: 90%;*/
   max-width: 1000px;
   margin: 0 auto;
   background-color: #799bbd;
 }
 
-/* grid index*/
+/*
+ grid index
 .layout {
     display: grid; 
     grid-template-columns: 1fr 1fr; 
@@ -24,11 +26,11 @@ body {
       "galeria galeria"
       "resumen resumen"
       "footer footer"; 
-  }
+  } */
 
-  nav {
+  /* nav {
     grid-area: nav;
-  }
+  } */
   
   .galeria { 
     grid-area: galeria;
@@ -50,7 +52,7 @@ body {
     height: 93px;
    }
   
-/* grid clientes*/
+/* grid clientes
 .layout-clientes {
   display: grid; 
   grid-template-columns: 1fr 1fr; 
@@ -60,9 +62,9 @@ body {
     "nav nav"
     "galeria galeria"
     "footer footer"; 
-}
+}*/
   
-/* grid servicios y legales*/
+/* grid servicios y legales
 .layout-servicios {
   display: grid; 
   grid-template-columns: 1fr 1fr; 
@@ -72,19 +74,20 @@ body {
     "nav nav"
     "resumen resumen"
     "footer footer"; 
-}
+}*/
 
 .container-div {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   grid-area: resumen;
+  list-style-type: none;
 }
 
 .contacto-formulario{
 display: block;
 grid-area: resumen;
-justify-self: center;
+text-align: -webkit-center;
 }
 
 h1 {
@@ -116,10 +119,10 @@ html {
   font-family: "Mukta", sans-serif;
 }
 
-li {
+/* li {
   list-style-type: none;
   display: inline-block;
-}
+} */
 
 a:hover {
   color: black;
@@ -146,6 +149,11 @@ a:hover {
   background-color: #000;
 }
 
+.nav-list {
+  width: 100%;
+  padding: 0px 0px 
+}
+
 .navegador { 
   background-color: black;
   text-align: center;
@@ -153,13 +161,14 @@ a:hover {
   display: flex;
   justify-content: space-evenly;
   text-decoration: none;
+  list-style-type: none;
+ 
 }
-nav a {
+.navegador a {
   text-decoration: none;
   color: inherit;
   font-size: 14px;
 }
-
 
 nav li {
   width: 10%;
@@ -168,12 +177,15 @@ nav li {
   border-radius: 5px;
 }
 
-
 nav li:hover {
   background-color: #799bbd;
   color: white;
 }
 
+.navegador :hover {
+    background-color: #799bbd;
+    color: white;
+  }
 
 .resumen {
   padding: 20px;
@@ -182,22 +194,28 @@ nav li:hover {
   border: solid 1px black;
   background-color: lightgrey;
   color: #0d1b2e;
+  flex-shrink: inherit
 }
 
+/*
 .intimacion {
 height:90%;
 width:90% ;
-}
+}*/
 
 .formulario {
-  display: block;
+  text-align: -webkit-center;
 }
 
 div h2 {
   text-align: center;
   grid-area:titulo;
-
 }
+
+input {
+  border-radius: 3px;
+}
+
 @media screen and (max-width: 1200px) {
   .whatsapp {
     position: fixed;
@@ -244,10 +262,12 @@ div h2 {
     text-align: center;
     color: #fff;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     text-decoration: none;
     align-items: center;
+    width: auto;
   }
   
   .galeria { 
@@ -309,3 +329,17 @@ div h2 {
 .animate__animated.animate__fadeInRight {
   --animate-duration: 2s;
 }
+
+/* corrigiendo bootstrap*/
+.carrusel {
+  max-height: 600px;
+}
+
+@media (min-width: 992px) {
+.navbar-expand-lg {
+  flex-wrap: wrap;
+  }
+}
+
+
+  
