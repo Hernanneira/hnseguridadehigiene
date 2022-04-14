@@ -9,20 +9,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../proyectoHN/CSS/estilo.css">
 </head>
 
-<body>
+<body class="container-fluid">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/estilo.css">
-    <nav>
-        <div class="nav-log">
+    <nav class="row">
+        <div class="col-12 nav-log">
             <a class="a-logo" href="../index.html"><img class="imagenLogo" src="../multimedia/Logo.png" alt="Logo"></a>
         </div>
-        <div class="nav-list">
+        <div class="col-12 nav-list">
             <ul class="navegador">
                 <li> <a href="../index.html">Inicio</a> </li>
                 <li> <a href="servicios.html">Servicios </a> </li>
@@ -33,20 +34,40 @@
         </div>
     </nav>
 
-    <h3>Formulario de Contacto</h3>
-    <form action="" >
-        <label for="nombre">Nombre:</label>
-            <input class="formulario" type="name" placeholder="Ingrese su nombre" name="nombre">
+    <h3 class="formulario">Formulario de Contacto</h3>
+
+    <div action="" class="row contacto-formulario">
+        <div class="col-sm-6 cl-xs-12 mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email:</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="usuario@gmail.com">
+        </div>
+        <div class="col-sm-6 cl-xs-12 mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Mensaje:</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div>
+        <button type="submit" class="col-xs-1 col-sm-2 btn btn-primary">Enviar</button>
+        </div>
+    </div>
+
+    <!-- <form class="contacto-formulario" action="" >
+        <h3>Formulario de Contacto</h3>
+        <label for="nombre">Nombre:</label> 
+            <input class="formulario" type="name" placeholder=" Ingrese su nombre" name="nombre">
         <label for="email">Email de Contacto:</label>
-            <input class="formulario" type="email" placeholder="Ingrese un email de contacto" name="email">
+            <input class="formulario" type="email" placeholder=" Ingrese su email" name="email">
         <label for="mensaje">Mensaje:</label>
             <textarea class="formulario" name="mensaje" id="" cols="30" rows="10"></textarea>
-        <input type="submit" value="enviar">
-        <input type="reset" value="eliminar todo">
+        <input type="submit" value=" Enviar ">
+        <input type="reset" value=" Eliminar todo ">
         
-    </form>
+    </form> -->
+    
     <a href="https://wa.me/5491164958337?text=Hola!%20Quisiera%20información%20sobre%20los%20servicios%20para%20mi%20empresa." class="whatsapp" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
+
+    <script src="js/bootstrap.min.js"></script>
+
 </body>
-<hr>
-<footer> Sitio web creado por HN Seguridad e Higiene, 2022.Todos los derechos reservados</footer>
+    <footer class="row"> Sitio web creado por HN Seguridad e Higiene, 2022.Todos los derechos reservados</footer>
+
 </html>
