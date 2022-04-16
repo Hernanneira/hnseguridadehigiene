@@ -5,6 +5,7 @@
 
 html {
   font-size: 62, 5%;
+  font-family: "Mukta", sans-serif;
 }
 
 body {
@@ -14,23 +15,6 @@ body {
   background-color: #799bbd;
 }
 
-/*
- grid index
-.layout {
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    grid-template-rows: 0.2fr 2fr 1fr 0.2fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      "nav nav"
-      "galeria galeria"
-      "resumen resumen"
-      "footer footer"; 
-  } */
-
-  /* nav {
-    grid-area: nav;
-  } */
   
   .galeria { 
     grid-area: galeria;
@@ -52,29 +36,6 @@ body {
     height: 93px;
    }
   
-/* grid clientes
-.layout-clientes {
-  display: grid; 
-  grid-template-columns: 1fr 1fr; 
-  grid-template-rows: 0.2fr 2fr 0.2fr; 
-  gap: 0px 0px; 
-  grid-template-areas: 
-    "nav nav"
-    "galeria galeria"
-    "footer footer"; 
-}*/
-  
-/* grid servicios y legales
-.layout-servicios {
-  display: grid; 
-  grid-template-columns: 1fr 1fr; 
-  grid-template-rows: 0.2fr 2fr 0.2fr; 
-  gap: 0px 0px; 
-  grid-template-areas: 
-    "nav nav"
-    "resumen resumen"
-    "footer footer"; 
-}*/
 
 .container-div {
   display: flex;
@@ -88,13 +49,6 @@ body {
 display: block;
 grid-area: resumen;
 text-align: -webkit-center;
-}
-
-h1 {
-  text-align: right;
-  color: white;
-  background-color: black;
-  display: inline;
 }
 
 .whatsapp {
@@ -114,15 +68,6 @@ h1 {
 .whatsapp-icon {
   margin-top: 10px;
 }
-
-html {
-  font-family: "Mukta", sans-serif;
-}
-
-/* li {
-  list-style-type: none;
-  display: inline-block;
-} */
 
 a:hover {
   color: black;
@@ -150,12 +95,12 @@ a:hover {
   padding: 0px;
 }
 
-.nav-list {
+/* .nav-list {
   width: 100%;
   padding: 0px
-}
+} */
 
-.navegador { 
+/* .navegador { 
   background-color: black;
   text-align: center;
   color: #fff;
@@ -163,30 +108,18 @@ a:hover {
   justify-content: space-evenly;
   text-decoration: none;
   list-style-type: none;
- 
-}
-.navegador a {
+} */
+
+/* .navegador a {
   text-decoration: none;
   color: inherit;
   font-size: 14px;
-}
+} */
 
-nav li {
-  width: 10%;
-  padding: 5px 10px;
-  margin: 0px 30px;
-  border-radius: 5px;
-}
-
-nav li:hover {
-  background-color: #799bbd;
-  color: white;
-}
-
-.navegador :hover {
+/* .navegador :hover {
     background-color: #799bbd;
     color: white;
-  }
+  } */
 
 .resumen {
   padding: 20px;
@@ -198,35 +131,25 @@ nav li:hover {
   flex-shrink: inherit
 }
 
-/*
-.intimacion {
-height:90%;
-width:90% ;
-}*/
-
 .formulario {
   text-align: -webkit-center;
-}
-
-div h2 {
-  text-align: center;
-  grid-area:titulo;
-}
-
-input {
-  border-radius: 3px;
-}
-
-
-.footer-clientes {
-  margin-top: 20px;
 }
 
 .animate__animated.animate__fadeInRight {
   --animate-duration: 2s;
 }
 
+
+
 /* corrigiendo bootstrap*/
+
+.h3, h3 {
+  font-size: 20px;
+  font-weight: bolder;
+  font-family: "Mukta", sans-serif;
+  text-align: center;
+}
+
 .carrusel {
   max-height: 600px;
 }
@@ -237,6 +160,60 @@ input {
 
 .row {
   --bs-gutter-x: 0rem;  
+}
+
+.navbar-toggler {
+  margin-right: 20px;
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-color: white;
+}
+
+.bg-light {
+  background-color: black !important;
+}
+
+@media (min-width: 992px) { 
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 0px 0px 0px 0px;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 992px) {
+.navbar-expand-lg .navbar-collapse {
+    justify-content: center;
+  }
+}
+.navbar-nav :hover {
+  background-color: #799bbd;
+ border-radius: 10px;
+}
+
+.navbar-nav .nav-link {
+  text-align: center;
+}
+
+
+/* .navbar-light .navbar-nav .nav-link .active {
+  color: white;
+} */
+
+/* 
+a:active {
+  color: blue;
+}*/
+
+#li {
+  color: white
+}
+
+.navbar-light .navbar-toggler {
+  border-color: white;
 }
 
 @media screen and (max-width: 1200px) {
@@ -344,6 +321,9 @@ input {
     margin: 10px;
   }
 
+  .logo {
+    width: 200px;
+  }
 }
 
 @media (min-width: 992px) {
