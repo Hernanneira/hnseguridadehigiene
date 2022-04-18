@@ -9,33 +9,32 @@ html {
 }
 
 body {
-  /*width: 90%;*/
   max-width: 1000px;
   margin: 0 auto;
   background-color: #799bbd;
 }
 
-  
-  .galeria { 
-    grid-area: galeria;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 10px;
-  }
 
-  
-  footer {
-    grid-area: footer;
-    text-align: center;
-    color: white;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 93px;
-   }
-  
+.galeria {
+  grid-area: galeria;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+
+footer {
+  grid-area: footer;
+  text-align: center;
+  color: white;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 93px;
+}
+
 
 .container-div {
   display: flex;
@@ -45,10 +44,10 @@ body {
   list-style-type: none;
 }
 
-.contacto-formulario{
-display: block;
-grid-area: resumen;
-text-align: -webkit-center;
+.contacto-formulario {
+  display: block;
+  grid-area: resumen;
+  text-align: -webkit-center;
 }
 
 .whatsapp {
@@ -88,39 +87,6 @@ a:hover {
   filter: none;
 }
 
-.nav-log {  
-  display: flex;
-  justify-content: center;
-  background-color: #000;
-  padding: 0px;
-}
-
-/* .nav-list {
-  width: 100%;
-  padding: 0px
-} */
-
-/* .navegador { 
-  background-color: black;
-  text-align: center;
-  color: #fff;
-  display: flex;
-  justify-content: space-evenly;
-  text-decoration: none;
-  list-style-type: none;
-} */
-
-/* .navegador a {
-  text-decoration: none;
-  color: inherit;
-  font-size: 14px;
-} */
-
-/* .navegador :hover {
-    background-color: #799bbd;
-    color: white;
-  } */
-
 .resumen {
   padding: 20px;
   margin: 25px;
@@ -139,11 +105,18 @@ a:hover {
   --animate-duration: 2s;
 }
 
-
+.logo { 
+  transition: 2s;
+ }
+ 
+ .logo:hover{
+   filter: invert();
+ }
 
 /* corrigiendo bootstrap*/
 
-.h3, h3 {
+.h3,
+h3 {
   font-size: 20px;
   font-weight: bolder;
   font-family: "Mukta", sans-serif;
@@ -152,6 +125,8 @@ a:hover {
 
 .carrusel {
   max-height: 600px;
+  margin-top: 10px;
+  border: solid;
 }
 
 .container-fluid {
@@ -159,7 +134,7 @@ a:hover {
 }
 
 .row {
-  --bs-gutter-x: 0rem;  
+  --bs-gutter-x: 0rem;
 }
 
 .navbar-toggler {
@@ -174,8 +149,35 @@ a:hover {
   background-color: black !important;
 }
 
-@media (min-width: 992px) { 
-.navbar-expand-lg .navbar-nav .nav-link {
+.navbar-nav :hover {
+  background-color: #799bbd;
+  border-radius: 10px;
+}
+
+.navbar-nav .nav-link {
+  text-align: center;
+}
+
+.nav-link {
+  transition: none
+}
+
+#li {
+  color: white
+}
+
+.navbar-light .navbar-toggler {
+  border-color: white;
+}
+
+.btn-primary {
+  margin-bottom: 10px;
+}
+
+/*media queris*/
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
     padding-right: 0px 0px 0px 0px;
     width: 100px;
     height: 40px;
@@ -185,36 +187,11 @@ a:hover {
 }
 
 @media (min-width: 992px) {
-.navbar-expand-lg .navbar-collapse {
+  .navbar-expand-lg .navbar-collapse {
     justify-content: center;
   }
 }
-.navbar-nav :hover {
-  background-color: #799bbd;
- border-radius: 10px;
-}
 
-.navbar-nav .nav-link {
-  text-align: center;
-}
-
-
-/* .navbar-light .navbar-nav .nav-link .active {
-  color: white;
-} */
-
-/* 
-a:active {
-  color: blue;
-}*/
-
-#li {
-  color: white
-}
-
-.navbar-light .navbar-toggler {
-  border-color: white;
-}
 
 @media screen and (max-width: 1200px) {
   .whatsapp {
@@ -230,7 +207,7 @@ a:active {
     font-size: 27px;
     z-index: 100;
   }
-  
+
   .whatsapp-icon {
     margin-top: none;
     transform: translateY(-3px);
@@ -238,40 +215,8 @@ a:active {
 }
 
 @media screen and (max-width: 768px) {
-
-  .layout {
-    display: grid; 
-    grid-template-columns: 1fr; 
-    grid-template-rows: 0.2fr 0.5fr 0.5fr 0.2fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      "nav nav"
-      "galeria galeria"
-      "resumen resumen"
-      "footer footer"; 
-  }
-
-  nav li {
-    width: auto;
-  padding: 5px 10px;
-  margin: 0px 30px;
-  border-radius: 5px;
-  }
-
-  .navegador { 
-    background-color: black;
-    text-align: center;
-    color: #fff;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    text-decoration: none;
-    align-items: center;
-    width: auto;
-  }
-  
-  .galeria { 
+ 
+  .galeria {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 10px;
@@ -284,6 +229,7 @@ a:active {
     object-fit: cover;
     margin: 10px;
   }
+
   .whatsapp {
     position: fixed;
     width: 40px;
@@ -297,7 +243,7 @@ a:active {
     font-size: 27px;
     z-index: 100;
   }
-  
+
   .whatsapp-icon {
     margin-top: none;
     transform: translateY(-3px);
@@ -327,9 +273,7 @@ a:active {
 }
 
 @media (min-width: 992px) {
-.navbar-expand-lg {
-  flex-wrap: wrap;
+  .navbar-expand-lg {
+    flex-wrap: wrap;
   }
-}
-
-  
+} 
