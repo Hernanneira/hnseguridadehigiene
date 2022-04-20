@@ -10,8 +10,6 @@ html {
     font-family: "Mukta", sans-serif;
 }
 
-
-
 body {
     max-width: 1000px;
     margin: 0 auto;
@@ -136,7 +134,7 @@ h3 {
 }
 
 .navbar-nav :hover {
-  background-color: #799bbd;
+  background-color: $colorPrincipal;
   border-radius: 10px;
 }
 
@@ -216,7 +214,7 @@ h3 {
       height: 40px;
       bottom: 35px;
       right: 2px;
-      background-color: #25d366;
+      background-color: $colorwhats;
       color: #fff;
       border-radius: 50px;
       text-align: center;

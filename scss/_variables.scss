@@ -1,12 +1,14 @@
 $colorPrincipal: #799bbd;
 
+$colorwhats: #25d366;
+
 @mixin whats { 
     position: fixed;
     width: 50px;
     height: 49px;
     bottom: 40px;
     right: 40px;
-    background-color: #25d366;
+    background-color: $colorwhats;
     color: #fff;
     border-radius: 50px;
     text-align: center;
