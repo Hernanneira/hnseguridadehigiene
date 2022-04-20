@@ -39,6 +39,7 @@ footer {
   text-align: -webkit-center; }
 
 .whatsapp {
+  /*mixin*/
   position: fixed;
   width: 50px;
   height: 49px;
@@ -53,7 +54,7 @@ footer {
 
 .whatsapp-icon {
   margin-top: 10px; }
-  .whatsapp-icon a:hover {
+  .whatsapp-icon:hover {
     color: black; }
 
 .imagenbombero {
@@ -151,17 +152,11 @@ h3 {
 
 @media screen and (max-width: 1200px) {
   .whatsapp {
-    position: fixed;
     width: 40px;
     height: 40px;
     bottom: 35px;
     right: 2px;
-    background-color: #25d366;
-    color: #fff;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 27px;
-    z-index: 100; }
+    font-size: 27px; }
   .whatsapp-icon {
     margin-top: none;
     transform: translateY(-3px); } }
