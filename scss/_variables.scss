@@ -16,3 +16,17 @@ $colorwhats: #25d366;
     z-index: 100;
 }
 
+$teamFlex: ( /*MAP*/
+    flex: flex,
+    wrap: wrap,
+    centrado: center,
+);
+
+.formulario {
+    text-align: -webkit-center;
+  }
+
+.contacto-formulario { /*extend*/
+    @extend .formulario;
+    display: block;
+}

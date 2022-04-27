@@ -16,9 +16,9 @@ body {
     background-color: $colorPrincipal;/*variable*/
 }
 
-.galeria {
-    display: flex;
-    flex-wrap: wrap;
+.galeria { /*map-get*/
+    display: map-get($teamFlex, flex);
+    flex-wrap: map-get($teamFlex, wrap);
     justify-content: space-between;
     margin-bottom: 10px;
 }
@@ -38,11 +38,6 @@ footer {
     flex-wrap: wrap;
     justify-content: space-evenly;
     list-style-type: none;
-}
-
-.contacto-formulario {
-    display: block;
-    text-align: -webkit-center;
 }
 
 .whatsapp { /*mixin*/
@@ -80,10 +75,6 @@ footer {
     background-color: lightgrey;
     color: #0d1b2e;
     flex-shrink: inherit
-}
-
-.formulario {
-  text-align: -webkit-center;
 }
 
 .animate__animated.animate__fadeInRight {
