@@ -72,13 +72,13 @@ footer {
     margin: 25px;
     border-radius: 10px;
     border: solid 1px black;
-    background-color: lightgrey;
-    color: #0d1b2e;
-    flex-shrink: inherit
-}
-
-.animate__animated.animate__fadeInRight {
-  --animate-duration: 2s;
+    background-color: lightgrey;    color: #0d1b2e;
+    flex-shrink: inherit;
+    box-shadow: 0px 3px 8px black;
+    &:hover{
+      box-shadow: 0px 8px 28px black;
+      transition: 300ms ease-in-out;
+    }
 }
 
 .logo { 
@@ -88,7 +88,37 @@ footer {
  }
 }
 
+.fondoContacto {
+  position: relative;
+  left: 0;
+  background-image: url(../multimedia/contacto.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+  flex-basis: 100%;
+  --animate-duration: 2s;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  text-align: center;
+}
+
+.logan {  
+  display: inline-block;
+ margin-right: 10px;
+}
+
 /* corrigiendo bootstrap*/
+
+.row {
+  justify-content: space-evenly;
+  --bs-gutter-x: 0rem;
+}
+
+.enviar {
+  text-align-last: center;
+}
 
 .h3,
 h3 {
@@ -98,20 +128,11 @@ h3 {
   text-align: center;
 }
 
-.carrusel {
-  max-height: 600px;
-  margin-top: 10px;
-  border: solid;
-}
-
 .container-fluid {
   padding: 0px
 }
 
-.row {
-  --bs-gutter-x: 0rem;
-}
-
+/*nav*/
 .navbar-toggler {
   margin-right: 20px;
 }
@@ -146,6 +167,54 @@ h3 {
 }
 
 .btn-primary {
+  margin-bottom: 10px;
+}
+
+.titulo2 {
+  font-family: "Mukta", sans-serif;
+}
+
+/*cambios carousel*/
+.carousel-caption {
+color: black;
+background-color: #fff;
+border: solid;
+border-radius: 10px;
+}
+
+.carrusel {
+  max-height: 600px;
+  margin-top: 10px;
+  border: solid;
+  margin-bottom: 10px;
+}
+
+.carousel-inner {
+  border: solid;
+  margin-top: 10px;
+  box-shadow: 0px 3px 8px black;
+  margin-bottom: 10px;
+    &:hover{
+      box-shadow: 0px 8px 28px black;
+      transition: 300ms ease-in-out;
+    }
+}
+
+.carrusel2 {
+  width: 70%;
+  border: none;
+  box-shadow: none;
+  margin: auto;
+    &:hover{
+      box-shadow: none;
+    } 
+}
+
+.precarrusel {
+  display: block;
+  text-align: center;
+  background-color: white;
+  padding: 15px 15px 15px 15px;
   margin-bottom: 10px;
 }
 
@@ -185,6 +254,7 @@ h3 {
   
   @media screen and (max-width: 768px) {
    
+
     .galeria {
       display: flex;
       flex-wrap: wrap;
@@ -217,10 +287,33 @@ h3 {
       margin-top: none;
       transform: translateY(-3px);
     }
+
+    .d-none {
+      display: block !important;
+      font-size: xx-small;
+    }
+
+    .carrusel {
+      width: auto;
+      border: none;
+      box-shadow: none;
+      transition: 5s;
+        &:hover{
+          box-shadow: none;
+        } 
+    }
+    .carousel-caption {
+      padding-top: 0px; 
+      padding-bottom: 0px;
+    }
+
   }
   
   @media screen and (max-width: 480px) {
-  
+    .carousel-caption {
+      -ms-text-size-adjust: 10px;
+    }
+
     .imagenbombero {
       width: 100px;
       height: 100px;
@@ -238,6 +331,11 @@ h3 {
   
     .logo {
       width: 200px;
+    }
+
+    .d-none {
+      display: block !important;
+      font-size: xx-small;
     }
   }
   
