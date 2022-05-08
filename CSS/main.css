@@ -19,8 +19,11 @@ html {
 body {
   max-width: 1000px;
   margin: 0 auto;
-  background-color: #799bbd;
-  /*variable*/ }
+  background-image: url(../multimedia/fondo4.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center; }
 
 .galeria {
   /*map-get*/
@@ -106,12 +109,23 @@ footer {
   --animate-duration: 2s;
   justify-content: center;
   align-items: center;
-  height: 600px;
-  text-align: center; }
+  height: 800px;
+  text-align: center;
+  display: flex; }
 
 .logan {
   display: inline-block;
   margin-right: 10px; }
+
+.fondoformulario {
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px; }
+
+.formulario, .contacto-formulario, .contacto-formulario {
+  padding: 10px;
+  border: solid;
+  border-radius: 10px; }
 
 /* corrigiendo bootstrap*/
 .row {
@@ -142,7 +156,7 @@ h3 {
   background-color: black !important; }
 
 .navbar-nav :hover {
-  background-color: #799bbd;
+  background-color: grey;
   border-radius: 10px; }
 
 .navbar-nav .nav-link {
@@ -177,10 +191,13 @@ h3 {
   margin-bottom: 10px; }
 
 .carousel-inner {
+  width: 80%;
   border: solid;
   margin-top: 10px;
   box-shadow: 0px 3px 8px black;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  margin: auto;
+  margin-top: 10px; }
   .carousel-inner:hover {
     box-shadow: 0px 8px 28px black;
     transition: 300ms ease-in-out; }
@@ -198,7 +215,8 @@ h3 {
   text-align: center;
   background-color: white;
   padding: 15px 15px 15px 15px;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  margin-top: 10px; }
 
 /*media queris*/
 @media (min-width: 992px) {
@@ -223,6 +241,10 @@ h3 {
   .whatsapp-icon {
     margin-top: none;
     transform: translateY(-3px); } }
+
+@media screen and (max-width: 1030px) {
+  .carousel-inner {
+    width: 90%; } }
 
 @media screen and (max-width: 768px) {
   .galeria {
@@ -282,7 +304,9 @@ h3 {
     width: 200px; }
   .d-none {
     display: block !important;
-    font-size: xx-small; } }
+    font-size: xx-small; }
+  .formulario, .contacto-formulario, .contacto-formulario {
+    width: auto; } }
 
 @media (min-width: 992px) {
   .navbar-expand-lg {
