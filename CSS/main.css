@@ -206,12 +206,9 @@ h3 {
   background-color: grey;
   border-color: black; }
 
-#titulo {
+.titulo {
   font-family: "Mukta", sans-serif;
   font-size: 25px; }
-
-.titulo2 {
-  font-family: "Mukta", sans-serif; }
 
 /*cambios carousel*/
 .carousel-caption {
