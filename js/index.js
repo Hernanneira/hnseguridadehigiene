@@ -6,8 +6,10 @@ let cantidadDeServicios;
 let clasesDeServicios = document.getElementsByClassName("animate__animated animate__fadeInUp")
 let sectionServicios = document.getElementById("sectionServicios")
 let titulo2 = document.getElementById("titulo2")
+let simuladorPresupuesto = document.getElementById("simuladorPresupuesto")
 let servicio;
 let seleccionado = " ";
+let carrito = [];
 
 class Servicios {
    constructor(numero, nombre, precio) {
@@ -32,7 +34,7 @@ function mostrarServicios(valor) {
    return lista;
 }
 
-do { nombreUsuario = prompt("BIENVENDIOS! \n Por favor ingrese su nombre");
+/*do { nombreUsuario = prompt("BIENVENDIOS! \n Por favor ingrese su nombre");
 console.log(nombreUsuario);
 } while (nombreUsuario == "");
 
@@ -56,7 +58,8 @@ for (i = 1; i <= cantidadDeServicios; i++) {
    suma(servicio.precio);
    serviciosSeleccionados(servicio.nombre , servicio.precio)
 }
-
+*/
+/*
 let article = document.createElement("article");
 article.className = "resumen"
 article.innerHTML = `<h3 id="servicio6" class="animate__animated animate__fadeInUp titulo">Simulador de presupuesto de servicios</h3>`
@@ -67,14 +70,58 @@ let mostrarAlUsuario = document.createElement("div");
 mostrarAlUsuario.innerHTML = `<h2> N°: ${producto.numero} </h2>
                               <p>  Servicio: ${producto.nombre}</p>
                               <b> $ ${producto.precio}</b>`;
-clasesDeServicios[6].appendChild(mostrarAlUsuario);
+clasesDeServicios[7].appendChild(mostrarAlUsuario);
 }
 
 let mostrarPresupuesto = document.createElement("div");
 mostrarPresupuesto.innerHTML = `<h2>La cotización para  ${nombreUsuario} </h2>
                               <p>Servicios seleccionados:\n ${seleccionado} </p><b>Total: ${presupuesto} Pesos</b>`;
-clasesDeServicios[6].appendChild(mostrarPresupuesto)
+clasesDeServicios[7].appendChild(mostrarPresupuesto)
 
 titulo2.innerText = "Gracias por simular un presupuesto de servicios con nosotros"
 
 alert("La cotización para " + nombreUsuario +"\n" + "Servicios seleccionados:\n"+ seleccionado +"\nTotal: "+presupuesto+" Pesos")
+*/
+
+let selected = document.createElement("select");
+selected.setAttribute("id","desplegableServicios")
+
+for (const producto of servicios) {
+    selected.innerHTML +=  `<option value='${producto.numero}'>${producto.nombre}</option>`;
+}
+simuladorPresupuesto.append(selected);
+
+
+const agregarServicio = () => {
+   let borradorUsuario = document.getElementById("borradorUsuario")
+   let optionValue = document.getElementById("desplegableServicios").value;
+   let nuevoServicio = document.createElement("h2");
+   let foundServicio = servicios.find(servicio => servicio.numero === parseInt(optionValue));
+   nuevoServicio.innerHTML = `se seleccionó ${foundServicio.nombre}`;
+   borradorUsuario.append(nuevoServicio);
+   carrito.push(foundServicio)
+   console.log(carrito)
+}
+
+
+let agregar = document.getElementById("agregar")
+agregar.addEventListener("click", agregarServicio)
+
+
+const eliminarServicio = () => {
+}
+
+let eliminar = document.getElementById("eliminar")
+eliminar.addEventListener("click", eliminarServicio)
+
+const limpiarServicio = () => {
+   borradorUsuario.innerHTML = " ";
+   alert("limpio con exito el simulador")
+   borradorUsuario.append(borradorUsuario)
+}
+
+let limpiar = document.getElementById("limpiar")
+limpiar.addEventListener("click", limpiarServicio)
+
+
+
