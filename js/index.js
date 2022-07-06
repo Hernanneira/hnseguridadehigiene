@@ -33,7 +33,6 @@ const agregarServicio = () => {
    let optionValue = document.getElementById("desplegableServicios").value;
    let foundServicio = servicios.find(servicio => servicio.numero === parseInt(optionValue));
    carrito.push(foundServicio)
-   //presupuesto += foundServicio.precio
    console.log(presupuesto)
    actualizarCarrito();
    estado.innerHTML = "Agrego correctamente"
@@ -48,7 +47,6 @@ const eliminarServicio = () => {
    let foundServicio = carrito.find(carrito => carrito.numero === parseInt(optionValue));
    let indice = carrito.indexOf(foundServicio)
    let estado = document.getElementById("estado")
-   //presupuesto -= foundServicio.precio
    console.log(presupuesto)
 
    // Condicional para tomar elemento a eliminar, agarrando indice de array.   
@@ -89,17 +87,14 @@ const limpiarServicio = () => {
    mostrarLoSimulado.innerHTML = ""
    console.log(carrito)
    estado.innerHTML = "Limpió TODO con exito"
+   presupuesto = 0
 }
 
 let limpiar = document.getElementById("limpiar")
 limpiar.addEventListener("click", limpiarServicio)
 
-
-//local storage y terminar
-const terminarServicio = () => {
-   mostrarLoSimulado.innerHTML = ``
-   console.log(terminarServicio);
-   localStorage.setItem("presupuesto", JSON.stringify(carrito))
+//Mostrar lo finalizado--
+function presupuestoTerminado() {
    let carritoStorage = JSON.parse(localStorage.getItem(`presupuesto`))
    carritoStorage.forEach(element => {
       let mostrarLoSimulado = document.getElementById("mostrarLoSimulado")
@@ -107,36 +102,28 @@ const terminarServicio = () => {
       div.classList.add('serviciosEnCarrito')
       div.innerHTML = `
                         <p>${element.nombre} $Precio: ${element.precio} </p>`
-                        
+
       mostrarLoSimulado.appendChild(div)
    })
    carritoStorage.forEach(element => {
-      presupuesto += element.precio
+      presupuesto += element.precio //operador +=
+      console.log(element?.detalle || "no existe esta propiedad de carrito") // optimizacion y operador logico "OR"
    })
-   if(presupuesto !== 0) {
-      mostrarLoSimulado.append(` El total es de $${presupuesto}`)
-   }
+
+   presupuesto !== 0 && mostrarLoSimulado.append(` El total es de $${presupuesto}`) //operador logico "AND
+}
+
+//local storage y terminar
+const terminarServicio = () => {
+   mostrarLoSimulado.innerHTML = ``
+   console.log(terminarServicio);
+   localStorage.setItem("presupuesto", JSON.stringify(carrito))
+   presupuestoTerminado();
 }
 
 //RECUPERA LOS DATOS!!!
 if (localStorage.getItem(`presupuesto`)) {
-  let carritoStorage = JSON.parse(localStorage.getItem(`presupuesto`))
-   carritoStorage.forEach(element => {
-      let mostrarLoSimulado = document.getElementById("mostrarLoSimulado")
-      const div = document.createElement('div')
-      div.classList.add('serviciosEnCarrito')
-      div.innerHTML = `
-                        <p>${element.nombre} $Precio: ${element.precio} </p>`
-                        
-      mostrarLoSimulado.appendChild(div)
-   })
-   carritoStorage.forEach(element => {
-      presupuesto += element.precio
-   })
-
-   if(presupuesto !== 0) {
-      mostrarLoSimulado.append(` El total es de $${presupuesto}`)
-   }
+   presupuestoTerminado();
 }
 
 let terminar = document.getElementById("terminar")
