@@ -210,6 +210,15 @@ h3 {
   font-family: "Mukta", sans-serif;
   font-size: 25px; }
 
+.tituloPresupuesto {
+  font-family: "Mukta", sans-serif;
+  font-size: 25px;
+  color: black; }
+
+.pServicios {
+  color: black;
+  font-size: 15px; }
+
 /*cambios carousel*/
 .carousel-caption {
   color: black;

@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <meta name="keywords"
         content="sistema de autoproteccion, sistema de autoprotección, sistema, autoproteccion, autoprotección, ley 5920, plano de evacuación, seguridad e higiene, higiene y seguridad, seguridad, higiene, analisis de riesgo,ignifugado, certificado de ignifugo">
     <meta name="description" content="Contactanos por whatsapp, mail.">
@@ -55,17 +56,17 @@
     </Div>
 
     <div class="fondoformulario">
-        <div action="" class="row formulario">
+        <div action="" id="formularioContenedor" class="row formulario">
             <div class=" mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Email:</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="usuario@gmail.com">
+                <input type="email" class="form-control" id="emailUsuario" placeholder="usuario@gmail.com">
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Mensaje:</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" id="mensajeUsuario" rows="3"></textarea>
             </div>
             <div class="enviar">
-                <button type="submit" class="col-xs-1 col-sm-2 btn btn-primary">Enviar</button>
+                <button type="submit" id="emailContacto" class="col-xs-1 col-sm-2 btn btn-primary">Enviar</button>
             </div>
         </div>
     </div>
@@ -73,7 +74,9 @@
     <a href="https://wa.me/5491164958337?text=Hola!%20Quisiera%20información%20sobre%20los%20servicios%20para%20mi%20empresa."
         class="whatsapp" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
 
-    <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/contacto.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
 </body>
 <footer class="row"> Sitio web creado por HN Seguridad e Higiene, 2022. Todos los derechos reservados</footer>
