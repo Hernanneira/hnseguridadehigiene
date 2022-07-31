@@ -48,6 +48,47 @@
     </Div>
 
     <section id="sectionServicios" class="row">
+
+        <article class="resumen">
+            <h3 class="animate__animated animate__fadeInUp titulo">Cotizar Servicio</h3>
+            <div id="simuladorPresupuesto" class="enviar">
+                <div id="seleccionador" class="fondoformulario">Selecciona el servicio ==>
+
+                </div>
+                <button id="agregar" type="submit" class="col-xs-1 col-sm-2 btn btn-primary">Agregar</button>
+                <button id="eliminar" type="submit" class="col-xs-1 col-sm-2 btn btn-primary">Eliminar</button>
+                <button id="limpiar" type="submit" class="col-xs-1 col-sm-2 btn btn-primary">Limpiar</button>
+                <p id="estado"></p>
+
+            </div>
+            <div>
+                <table id="tablaCotizacion" class="table table-dark table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</td>
+                            <th scope="col">Servicio</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody id="borradorUsuario">
+                    </tbody>
+
+                </table>
+            </div>
+            <p>*las cotizaciones se realizacion por su valor promedio, los montos pueden verse modificados segun el
+                servicio que requeira</p>
+            <div>
+
+                <button id="enviarCotizacion" type="submit" class="col-xs-1 col-sm-1 btn btn-primary">Enviar</button>
+            </div>
+
+            <h2 id="mostrarLoSimulado">
+
+            </h2>
+
+        </article>
+
         <article class="resumen">
             <h3 id="servicio0" class="animate__animated animate__fadeInUp titulo">Sistema de autoprotección</h3>
             <p> La ley 5920 GCBA, <span class="resaltar">solicita a todos a los establecimientos que tengan un sistema
@@ -102,46 +143,7 @@
 
             </p>
         </article>
-
-        <article class="resumen">
-            <h3 class="animate__animated animate__fadeInUp titulo">Cotizar Servicio</h3>
-            <div id="simuladorPresupuesto" class="enviar">
-                <button id="agregar" type="submit" class="col-xs-1 col-sm-2 btn btn-primary">Agregar</button>
-                <button id="eliminar" type="submit" class="col-xs-1 col-sm-2 btn btn-primary">Eliminar</button>
-                <button id="limpiar" type="submit" class="col-xs-1 col-sm-2 btn btn-primary">Limpiar</button>
-                <p id="estado"></p>
-            </div>
-            <div id="borradorUsuario"></div>
-            <div>
-
-                <button id="terminar" type="submit" class="col-xs-1 col-sm-2 btn btn-primary" data-bs-target="#mostrar" data-bs-toggle="modal" >Terminar</button>
-
-                <div id="mostrar" class="modal" tabindex="-1">
-                    <div class="modal-dialog">
-                         <!-- <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title">Modal title</h5>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                              <p>Modal body text goes here.</p>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                              <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                          </div>  -->
-                    </div>
-                </div>
-            </div>
-
-            <h2 id="mostrarLoSimulado">
-
-            </h2>
-
-        </article>
     </section>
-
 
     <a href="https://wa.me/5491164958337?text=Hola!%20Quisiera%20información%20sobre%20los%20servicios%20para%20mi%20empresa."
         class="whatsapp" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
@@ -150,7 +152,6 @@
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/servicios.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-
 
     <footer class="row"> Sitio web creado por HN Seguridad e Higiene, 2022. Todos los derechos reservados</footer>
 </body>

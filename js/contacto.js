@@ -6,11 +6,6 @@ let formularioContenedor = document.getElementById("formularioContenedor")
 let estadoFormulario = document.createElement("h3")
 
 emailContacto.addEventListener('click', () => {
-    //     fetch("contacto.json") 
-    //         .then(respuesta => respuesta.json())
-    //         .then(respuesta => console.log(respuesta))
-
-    // })
     const data = {
         title: emailUsuario.value,
         body: mensajeUsuario.value,
@@ -22,14 +17,12 @@ emailContacto.addEventListener('click', () => {
             'Content-type': 'application/json; charset=UTF-8',
         }
     })
-
         .then((response) => response.json())
         .then((data) => {
             console.log(data)
-
         })
     
-    estadoFormulario.innerHTML = "Enviando mensaje..."
+    estadoFormulario.innerHTML = "Enviando..."
     if (emailUsuario.value == "") {
         setTimeout(() => {
             estadoFormulario.innerHTML = "Complete correctamente los casilleros"

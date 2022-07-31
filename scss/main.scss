@@ -159,6 +159,10 @@ a.whatsapp {
 
 /* corrigiendo bootstrap*/
 
+.serviciosEnCarrito{
+  color: #fff;
+}
+
 .row {
   justify-content: space-evenly;
   --bs-gutter-x: 0rem;
@@ -203,6 +207,7 @@ h3 {
   text-align: center;
 }
 
+
 .nav-link {
   background:linear-gradient($colorPrincipal,$colorPrincipal);
   background-position: 50% 100%;
@@ -224,7 +229,6 @@ h3 {
 }
 
 .btn-primary {
-  margin-bottom: 10px;
   background-color: grey;
   border-color: black;
 }
