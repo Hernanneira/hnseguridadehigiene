@@ -1,11 +1,51 @@
 //FORMULARIO
-let emailUsuario = document.getElementById("emailUsuario")
+
 let mensajeUsuario = document.getElementById("mensajeUsuario")
 let emailContacto = document.getElementById("emailContacto")
 let formularioContenedor = document.getElementById("formularioContenedor")
 let estadoFormulario = document.createElement("h3")
 
-emailContacto.addEventListener('click', () => {
+//verificacion de Correo y envio por fetch "post" del contenido.
+    const validarCorreo = () => {
+    let emailUsuario = document.getElementById("emailUsuario")
+    var expReg= /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+    let esValido = expReg.test(emailUsuario.value)
+
+    if(esValido == true) {
+        Swal.fire({
+        title: 'Enviando...',
+        timer: 2000,
+        didOpen: () => {
+           Swal.showLoading()
+        },
+     })
+        .then((result) => {
+           Swal.fire(
+              `el mensaje de <p class="resaltar"> ${emailUsuario.value} </p> fue enviada con exito. A la brevedad nos contactaremos`
+           )
+        })
+    }else{
+        Swal.fire({
+            title: 'Enviando...',
+            timer: 2000,
+            didOpen: () => {
+               Swal.showLoading()
+            },
+         })
+            .then((result) => {
+                // Swal.fire({
+                //     icon: 'error',
+                //     title: 'Oops...',
+                //     text: 'Something went wrong!',
+                //     footer: '<a href="">Why do I have this issue?</a>'
+                //   })
+                Swal.fire(
+                    `El email: <p class="resaltar"> ${emailUsuario.value} </p> es Incorrecto.`,
+                    `Intentelo nuevamente,`,
+                    'error'
+                  )
+            })
+    }
     const data = {
         title: emailUsuario.value,
         body: mensajeUsuario.value,
@@ -20,44 +60,7 @@ emailContacto.addEventListener('click', () => {
         .then((response) => response.json())
         .then((data) => {
             console.log(data)
+            console.log(data.title)
         })
-    
-    estadoFormulario.innerHTML = "Enviando..."
-    if (emailUsuario.value == "") {
-        setTimeout(() => {
-            estadoFormulario.innerHTML = "Complete correctamente los casilleros"
-            Toastify({  //NOTIFICACIONES
-                text: "Cancelado",
-                duration: 3000,
-                newWindow: true,
-                close: true,
-                gravity: "top", // `top` or `bottom`
-                position: "right", // `left`, `center` or `right`
-                stopOnFocus: true, // Prevents dismissing of toast on hover
-                style: {
-                    background: "linear-gradient(to right, #ed2711, #ed6211)",
-                },
-                onClick: function () { } // Callback after click
-            }).showToast()
-        }, 5000)
-    } else {
-        setTimeout(() => {
-            estadoFormulario.innerHTML = "Mensaje enviado con exito. En breves nos contactaremos para darle respuesta."
-            Toastify({
-                text: "Enviado",
-                duration: 3000,
-                newWindow: true,
-                gravity: "top", // `top` or `bottom`
-                position: "right", // `left`, `center` or `right`
-                stopOnFocus: true, // Prevents dismissing of toast on hover
-                style: {
-                    background: "linear-gradient(to right, #00b09b, #96c93d)",
-                },
-                onClick: function () { } // Callback after click
-            }).showToast()
-        }, 5000);
     }
-    formularioContenedor.append(estadoFormulario)
-    emailContacto.innerText.value = ""
-    mensajeUsuario.innerText.value = ""
-})
+emailContacto.addEventListener('click', validarCorreo)
