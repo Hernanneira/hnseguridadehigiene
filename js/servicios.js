@@ -21,11 +21,12 @@ servicios.push(new Servicios(4, clasesDeServicios[4].innerHTML, 12000, 1));
 servicios.push(new Servicios(5, clasesDeServicios[5].innerHTML, 35000, 1));
 servicios.push(new Servicios(6, clasesDeServicios[6].innerHTML, 25000, 1));
 
-let selected = document.createElement("select");
+let selected = document.createElement("select")
+selected.className = "form-select";
 selected.setAttribute("id", "desplegableServicios")
 
 for (const producto of servicios) {
-   selected.innerHTML += `<option value='${producto.numero}'>${producto.nombre}</option>`;
+   selected.innerHTML += `<option  value='${producto.numero}'>${producto.nombre}</option>`;
 }
 seleccionador.append(selected);
 

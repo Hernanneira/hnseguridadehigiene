@@ -150,6 +150,9 @@ a.whatsapp:hover {
   .enlaces:hover {
     text-decoration: underline; }
 
+#seleccionador {
+  border: outset; }
+
 /* corrigiendo bootstrap*/
 .serviciosEnCarrito {
   color: #fff; }
